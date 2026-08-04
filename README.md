@@ -24,55 +24,94 @@ This problem is representative of real-world applications in machine learning an
 
 ## Repository Structure
 
+> **GitHub status:** as of writing, only `README.md`, `BBO_Capstone_Datasheet.docx`, and `BBO_Capstone_Model_Card.docx` have been pushed to GitHub (hence the root-level links above). The structure below reflects the full local project directory and will be pushed in a later commit. Auto-generated housekeeping folders (`.ipynb_checkpoints/`, `anaconda_projects/`, `__pycache__/`) are omitted below for clarity.
+
 ```
-├── README.md                        # This file
-├── BBO_Capstone_Datasheet.docx      # Dataset documentation
-├── BBO_Capstone_Model_Card.docx     # Surrogate model documentation
-├── Capstone_Project.ipynb           # Main per-function GP modelling and acquisition notebook
+├── README.md
+├── BBO_Capstone_Datasheet.docx
+├── BBO_Capstone_Model_Card.docx
+├── Capstone Project.ipynb           # Main notebook
+├── Function_1.ipynb                 # Per-function GP modelling and acquisition notebooks
+├── Function_2.ipynb
+├── Function_3.ipynb
+├── function_4.ipynb
+├── Function_5.ipynb
+├── Function_6.ipynb
+├── Function_7.ipynb
+├── Function_8.ipynb
+├── Function_Temp.ipynb              # Scratch/testing notebook
 ├── Update_Data_Points.ipynb         # Central merging notebook: loads initial + weekly data
 ├── Capstone Project FAQs-1.pdf      # Project specification and FAQ
+├── scipy-clean-full.yml             # Conda environment spec
+├── Function1_progress_highwater.png
 │
-├── Claude/                      # Per-function state: versioned markdown summary files
+├── Function MD/                  # Per-function state: versioned markdown summary files
 │   ├── Function_1_Summary.md
 │   ├── Function_2_Summary.md
-│   └── ...
+│   └── ... (through Function_8_Summary.md)
 │
-├── Docs/                        # Project documentation and reflections
+├── Docs/                         # Project documentation and reflections
+│   ├── BBO_Capstone_Datasheet.docx
+│   ├── BBO_Capstone_Model_Card.docx
+│   ├── BBO_Capstone_Datasheet_and_Model_Card.docx   # combined version
 │   ├── Readme.docx
+│   ├── README.md
 │   ├── Black Box Capstone.docx
-│   └── Reflections.docx
+│   ├── Reflections.docx
+│   ├── Reflections Postings.docx
+│   ├── Round10_Reflection.docx
+│   └── AI Ideas.docx
 │
-├── Figures/                     # Output visualisations: sigma maps, straddle maps, results
+├── Data/                         # Per-function evaluated points — full merged dataset + transform logs
+│   ├── function_1/
+│   │   ├── initial_inputs.npy / initial_outputs.npy
+│   │   ├── initial_inputs_test.npy / initial_outputs_test.npy
+│   │   ├── merged_inputs.npy / merged_outputs.npy
+│   │   ├── input.csv / output.csv
+│   │   └── y_transformations*.csv
+│   └── ... (function_2 through function_8, same layout)
+│
+├── initial_data/                 # ⚠ status TBC — overlaps with Data/, see note below
+│   ├── function_1/
+│   │   ├── initial_inputs.npy / initial_outputs.npy
+│   │   └── output.csv (+ y_transformations.csv for some functions)
+│   └── ... (function_2 through function_8)
+│
+├── Figures/                      # Output visualisations: sigma maps, straddle maps, projection matrices
 │   ├── Function1_sigma_map.png
 │   ├── Function1_straddle_map.png
-│   └── ...
+│   ├── Function1_exploration_signal.png
+│   ├── Function2_exploration_signal.png
+│   ├── Function2_sigma_map.png
+│   ├── Function4_projection_matrix.png
+│   ├── Function5_projection_matrix.png
+│   ├── Function6_projection_matrix.png
+│   ├── Function7_projection_matrix.png
+│   ├── Function8_projection_matrix.png
+│   └── ... (iteration/results snapshots)
 │
-├── Results/                     # Evaluated data tracking
+├── Results/                      # Evaluated data tracking
 │   └── Data Points.xlsx
 │
-├── Scratch/                     # Exploratory notebooks and test scripts (not production)
+├── Scratch/                      # Exploratory notebooks and test scripts (not production)
+│   ├── Capstone Project ENV.ipynb
 │   ├── MatrixMathsTest.ipynb
 │   └── test.py
 │
-├── Utils/                       # Custom acquisition function implementations
-│   └── imse_acquisition.py
+├── Utils/                        # Custom acquisition and plotting utilities
+│   ├── imse_acquisition.py
+│   ├── plot_input_pairs.py
+│   └── plot_progress.py
 │
-├── initial_data/                # Per-function initial evaluated points
-│   ├── function_1/
-│   │   ├── initial_inputs.npy
-│   │   ├── initial_outputs.npy
-│   │   └── ...
-│   └── ...
-│
-├── initial_data - Original/     # Read-only backup of original initial data
-│
-└── Weekly_updates/               # Weekly submission inputs and returned outputs
-    ├── w1_inputs.txt
-    ├── w1_outputs.txt
-    └── ...
+└── Weekly_updates/                # Weekly submission inputs and returned outputs
+    ├── w1_inputs.txt / w1_outputs.txt
+    ├── w2_inputs.txt / w2_outputs.txt
+    └── ... (through w9)
 ```
 
-**Data flow:** `Update_Data_Points.ipynb` reads `./initial_data/{function_name}/initial_inputs.npy` and `initial_outputs.npy`, then appends weekly results from `./Weekly_updates/{week}_inputs.txt` and `./Weekly_updates/{week}_outputs.txt` to produce the full X/y dataset used in `Capstone_Project.ipynb`.
+**⚠ Open item — `Data/` vs `initial_data/`:** both folders currently exist with overlapping per-function files. `Data/` (formerly `initial_data/`, renamed for clarity) holds the fuller working set, including `merged_*.npy` and test/transform files. `initial_data/` still exists alongside it with an older, smaller file set. Status of `initial_data/` (stale copy to be removed vs. still in use) is unresolved — flag when confirmed and this section will be updated.
+
+**Data flow:** `Update_Data_Points.ipynb` reads `./Data/{function_name}/initial_inputs.npy` and `initial_outputs.npy`, then appends weekly results from `./Weekly_updates/{week}_inputs.txt` and `./Weekly_updates/{week}_outputs.txt` to produce the full X/y dataset used in the per-function notebooks (`Function_1.ipynb`–`Function_8.ipynb`).
 
 ---
 
@@ -177,4 +216,4 @@ pip install mlxtend          # pip preferred over conda-forge on Windows
 
 ## Per-Function State
 
-Canonical per-function state (kernel parameters, current best point, acquisition strategy, open questions) is maintained as versioned markdown files in `Claude/`. These are updated after each weekly submission cycle and serve as the primary living documentation alongside this README.
+Canonical per-function state (kernel parameters, current best point, acquisition strategy, open questions) is maintained as versioned markdown files in `Function MD/`. These are updated after each weekly submission cycle and serve as the primary living documentation alongside this README.
