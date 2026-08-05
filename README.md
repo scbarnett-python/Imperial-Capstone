@@ -22,104 +22,20 @@ This problem is representative of real-world applications in machine learning an
 
 ---
 
-## Repository Structure
-
-> **GitHub status:** the full project structure below (notebooks, data, utilities, figures, and `Docs/`) is pushed to GitHub. A `Notes/` folder also exists locally for private working documents (draft write-ups, reflections, AI-assistance notes) and is excluded from GitHub via `.gitignore` — it is not shown below. Auto-generated housekeeping folders (`.ipynb_checkpoints/`, `anaconda_projects/`, `__pycache__/`) are also omitted for clarity.
-
-```
-├── README.md
-├── BBO_Capstone_Datasheet.docx
-├── BBO_Capstone_Datasheet.md
-├── BBO_Capstone_Model_Card.docx
-├── BBO_Capstone_Model_Card.md
-├── Capstone Project.ipynb           # Main notebook
-├── Function_1.ipynb                 # Per-function GP modelling and acquisition notebooks
-├── Function_2.ipynb
-├── Function_3.ipynb
-├── function_4.ipynb
-├── Function_5.ipynb
-├── Function_6.ipynb
-├── Function_7.ipynb
-├── Function_8.ipynb
-├── Function_Temp.ipynb              # Scratch/testing notebook
-├── Update_Data_Points.ipynb         # Central merging notebook: loads initial + weekly data
-├── Capstone Project FAQs-1.pdf      # Project specification and FAQ
-├── scipy-clean-full.yml             # Conda environment spec
-├── Function1_progress_highwater.png
-│
-├── Function MD/                  # Per-function state: versioned markdown summary files
-│   ├── Function_1_Summary.md
-│   ├── Function_2_Summary.md
-│   └── ... (through Function_8_Summary.md)
-│
-├── Docs/                         # Public project documentation
-│   └── Readme.docx                # Word-format mirror of this file
-│
-├── Data/                         # Per-function evaluated points — full merged dataset + transform logs
-│   ├── function_1/
-│   │   ├── initial_inputs.npy / initial_outputs.npy
-│   │   ├── initial_inputs_test.npy / initial_outputs_test.npy
-│   │   ├── merged_inputs.npy / merged_outputs.npy
-│   │   ├── input.csv / output.csv
-│   │   └── y_transformations*.csv
-│   └── ... (function_2 through function_8, same layout)
-│
-├── initial_data/                 # ⚠ status TBC — overlaps with Data/, see note below
-│   ├── function_1/
-│   │   ├── initial_inputs.npy / initial_outputs.npy
-│   │   └── output.csv (+ y_transformations.csv for some functions)
-│   └── ... (function_2 through function_8)
-│
-├── Figures/                      # Output visualisations: sigma maps, straddle maps, projection matrices
-│   ├── Function1_sigma_map.png
-│   ├── Function1_straddle_map.png
-│   ├── Function1_exploration_signal.png
-│   ├── Function2_exploration_signal.png
-│   ├── Function2_sigma_map.png
-│   ├── Function4_projection_matrix.png
-│   ├── Function5_projection_matrix.png
-│   ├── Function6_projection_matrix.png
-│   ├── Function7_projection_matrix.png
-│   ├── Function8_projection_matrix.png
-│   └── ... (iteration/results snapshots)
-│
-├── Results/                      # Evaluated data tracking
-│   └── Data Points.xlsx
-│
-├── Scratch/                      # Exploratory notebooks and test scripts (not production)
-│   ├── Capstone Project ENV.ipynb
-│   ├── MatrixMathsTest.ipynb
-│   └── test.py
-│
-├── Utils/                        # Custom acquisition and plotting utilities
-│   ├── imse_acquisition.py
-│   ├── plot_input_pairs.py
-│   └── plot_progress.py
-│
-└── Weekly_updates/                # Weekly submission inputs and returned outputs
-    ├── w1_inputs.txt / w1_outputs.txt
-    ├── w2_inputs.txt / w2_outputs.txt
-    └── ... (through w9)
-```
-
-**⚠ Open item — `Data/` vs `initial_data/`:** both folders currently exist with overlapping per-function files. `Data/` (formerly `initial_data/`, renamed for clarity) holds the fuller working set, including `merged_*.npy` and test/transform files. `initial_data/` still exists alongside it with an older, smaller file set. Status of `initial_data/` (stale copy to be removed vs. still in use) is unresolved — flag when confirmed and this section will be updated.
-
-**Data flow:** `Update_Data_Points.ipynb` reads `./Data/{function_name}/initial_inputs.npy` and `initial_outputs.npy`, then appends weekly results from `./Weekly_updates/{week}_inputs.txt` and `./Weekly_updates/{week}_outputs.txt` to produce the full X/y dataset used in the per-function notebooks (`Function_1.ipynb`–`Function_8.ipynb`).
-
----
-
 ## Function Summary
 
-| Function | Dims | Domain | Best y (to date) | Active Acquisition | Details |
-|----------|------|--------|------------------|--------------------|---------|
-| 1 | 2D | [0,1]² | — | Straddle (level-set) | [Function_1_Summary.md](./Function%20MD/Function_1_Summary.md) |
-| 2 | 2D | [0,1]² | 0.633 | EI + IMSE (coverage) | [Function_2_Summary.md](./Function%20MD/Function_2_Summary.md) |
-| 3 | 3D | [0,1]³ | −0.00898 | EI (x3 ≤ 0.55 constraint) | [Function_3_Summary.md](./Function%20MD/Function_3_Summary.md) |
-| 4 | 4D | [0,1]⁴ | −0.0424 | UCB / max-variance probe | [Function_4_Summary.md](./Function%20MD/Function_4_Summary.md) |
-| 5 | 4D | [0,1]⁴ | 4577 | EI (near (1,1,1,1) corner) | [Function_5_Summary.md](./Function%20MD/Function_5_Summary.md) |
-| 6 | 5D | [0,1]⁵ | −0.6245 | EI (isotropic kernel) | [Function_6_Summary.md](./Function%20MD/Function_6_Summary.md) |
-| 7 | 6D | [0,1]⁶ | 1.5237 | EI (capped-ARD kernel) | [Function_7_Summary.md](./Function%20MD/Function_7_Summary.md) |
-| 8 | 8D | [0,1]⁸ | 9.901 | EI (widened-ARD kernel) | [Function_8_Summary.md](./Function%20MD/Function_8_Summary.md) |
+| Function | Dims | Domain | Best y (to date) | Active Acquisition | Details | Incumbent Progress |
+|----------|------|--------|------------------|--------------------|---------|---------------------|
+| 1 | 2D | [0,1]² | — | Straddle (level-set) | [Function_1_Summary.md](./Function%20MD/Function_1_Summary.md) | [Function1_progress_highwater.png](./Results/Function1_progress_highwater.png) |
+| 2 | 2D | [0,1]² | 0.633 | EI + IMSE (coverage) | [Function_2_Summary.md](./Function%20MD/Function_2_Summary.md) | — |
+| 3 | 3D | [0,1]³ | −0.00898 | EI (x3 ≤ 0.55 constraint) | [Function_3_Summary.md](./Function%20MD/Function_3_Summary.md) | — |
+| 4 | 4D | [0,1]⁴ | −0.0424 | UCB / max-variance probe | [Function_4_Summary.md](./Function%20MD/Function_4_Summary.md) | — |
+| 5 | 4D | [0,1]⁴ | 4577 | EI (near (1,1,1,1) corner) | [Function_5_Summary.md](./Function%20MD/Function_5_Summary.md) | — |
+| 6 | 5D | [0,1]⁵ | −0.6245 | EI (isotropic kernel) | [Function_6_Summary.md](./Function%20MD/Function_6_Summary.md) | — |
+| 7 | 6D | [0,1]⁶ | 1.5237 | EI (capped-ARD kernel) | [Function_7_Summary.md](./Function%20MD/Function_7_Summary.md) | — |
+| 8 | 8D | [0,1]⁸ | 9.901 | EI (widened-ARD kernel) | [Function_8_Summary.md](./Function%20MD/Function_8_Summary.md) | — |
+
+*Incumbent progress plots are added as they become available; currently only Function 1 has a saved plot.*
 
 ---
 
@@ -210,3 +126,89 @@ pip install mlxtend          # pip preferred over conda-forge on Windows
 ## Per-Function State
 
 Canonical per-function state (kernel parameters, current best point, acquisition strategy, open questions) is maintained as versioned markdown files in `Function MD/`. These are updated after each weekly submission cycle and serve as the primary living documentation alongside this README.
+
+---
+
+## Repository Structure
+
+> **GitHub status:** the full project structure below (notebooks, data, utilities, figures, and `Docs/`) is pushed to GitHub. A `Notes/` folder also exists locally for private working documents (draft write-ups, reflections, AI-assistance notes) and is excluded from GitHub via `.gitignore` — it is not shown below. Auto-generated housekeeping folders (`.ipynb_checkpoints/`, `anaconda_projects/`, `__pycache__/`) are also omitted for clarity.
+
+```
+├── README.md
+├── BBO_Capstone_Datasheet.docx
+├── BBO_Capstone_Datasheet.md
+├── BBO_Capstone_Model_Card.docx
+├── BBO_Capstone_Model_Card.md
+├── Capstone Project.ipynb           # Main notebook
+├── Function_1.ipynb                 # Per-function GP modelling and acquisition notebooks
+├── Function_2.ipynb
+├── Function_3.ipynb
+├── function_4.ipynb
+├── Function_5.ipynb
+├── Function_6.ipynb
+├── Function_7.ipynb
+├── Function_8.ipynb
+├── Function_Temp.ipynb              # Scratch/testing notebook
+├── Update_Data_Points.ipynb         # Central merging notebook: loads initial + weekly data
+├── Capstone Project FAQs-1.pdf      # Project specification and FAQ
+├── scipy-clean-full.yml             # Conda environment spec
+│
+├── Function MD/                  # Per-function state: versioned markdown summary files
+│   ├── Function_1_Summary.md
+│   ├── Function_2_Summary.md
+│   └── ... (through Function_8_Summary.md)
+│
+├── Docs/                         # Public project documentation
+│   └── Readme.docx                # Word-format mirror of this file
+│
+├── Data/                         # Per-function evaluated points — full merged dataset + transform logs
+│   ├── function_1/
+│   │   ├── initial_inputs.npy / initial_outputs.npy
+│   │   ├── initial_inputs_test.npy / initial_outputs_test.npy
+│   │   ├── merged_inputs.npy / merged_outputs.npy
+│   │   ├── input.csv / output.csv
+│   │   └── y_transformations*.csv
+│   └── ... (function_2 through function_8, same layout)
+│
+├── initial_data/                 # ⚠ status TBC — overlaps with Data/, see note below
+│   ├── function_1/
+│   │   ├── initial_inputs.npy / initial_outputs.npy
+│   │   └── output.csv (+ y_transformations.csv for some functions)
+│   └── ... (function_2 through function_8)
+│
+├── Figures/                      # Output visualisations: sigma maps, straddle maps, projection matrices
+│   ├── Function1_sigma_map.png
+│   ├── Function1_straddle_map.png
+│   ├── Function1_exploration_signal.png
+│   ├── Function2_exploration_signal.png
+│   ├── Function2_sigma_map.png
+│   ├── Function4_projection_matrix.png
+│   ├── Function5_projection_matrix.png
+│   ├── Function6_projection_matrix.png
+│   ├── Function7_projection_matrix.png
+│   ├── Function8_projection_matrix.png
+│   └── ... (iteration/results snapshots)
+│
+├── Results/                      # Evaluated data tracking + incumbent progress plots
+│   ├── Data Points.xlsx
+│   └── Function1_progress_highwater.png   # only Function 1 currently available
+│
+├── Scratch/                      # Exploratory notebooks and test scripts (not production)
+│   ├── Capstone Project ENV.ipynb
+│   ├── MatrixMathsTest.ipynb
+│   └── test.py
+│
+├── Utils/                        # Custom acquisition and plotting utilities
+│   ├── imse_acquisition.py
+│   ├── plot_input_pairs.py
+│   └── plot_progress.py
+│
+└── Weekly_updates/                # Weekly submission inputs and returned outputs
+    ├── w1_inputs.txt / w1_outputs.txt
+    ├── w2_inputs.txt / w2_outputs.txt
+    └── ... (through w9)
+```
+
+**⚠ Open item — `Data/` vs `initial_data/`:** both folders currently exist with overlapping per-function files. `Data/` (formerly `initial_data/`, renamed for clarity) holds the fuller working set, including `merged_*.npy` and test/transform files. `initial_data/` still exists alongside it with an older, smaller file set. Status of `initial_data/` (stale copy to be removed vs. still in use) is unresolved — flag when confirmed and this section will be updated.
+
+**Data flow:** `Update_Data_Points.ipynb` reads `./Data/{function_name}/initial_inputs.npy` and `initial_outputs.npy`, then appends weekly results from `./Weekly_updates/{week}_inputs.txt` and `./Weekly_updates/{week}_outputs.txt` to produce the full X/y dataset used in the per-function notebooks (`Function_1.ipynb`–`Function_8.ipynb`).
