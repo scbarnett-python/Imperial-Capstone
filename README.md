@@ -110,16 +110,16 @@ This problem is representative of real-world applications in machine learning an
 
 ## Function Summary
 
-| Function | Dims | Domain | Best y (to date) | Active Acquisition |
-|----------|------|--------|------------------|--------------------|
-| 1 | 2D | [0,1]² | — | Straddle (level-set) |
-| 2 | 2D | [0,1]² | 0.633 | EI + IMSE (coverage) |
-| 3 | 3D | [0,1]³ | −0.00898 | EI (x3 ≤ 0.55 constraint) |
-| 4 | 4D | [0,1]⁴ | −0.0424 | UCB / max-variance probe |
-| 5 | 4D | [0,1]⁴ | 4577 | EI (near (1,1,1,1) corner) |
-| 6 | 5D | [0,1]⁵ | −0.6245 | EI (isotropic kernel) |
-| 7 | 6D | [0,1]⁶ | 1.5237 | EI (capped-ARD kernel) |
-| 8 | 8D | [0,1]⁸ | 9.901 | EI (widened-ARD kernel) |
+| Function | Dims | Domain | Best y (to date) | Active Acquisition | Details |
+|----------|------|--------|------------------|--------------------|---------|
+| 1 | 2D | [0,1]² | — | Straddle (level-set) | [Function_1_Summary.md](./Function%20MD/Function_1_Summary.md) |
+| 2 | 2D | [0,1]² | 0.633 | EI + IMSE (coverage) | [Function_2_Summary.md](./Function%20MD/Function_2_Summary.md) |
+| 3 | 3D | [0,1]³ | −0.00898 | EI (x3 ≤ 0.55 constraint) | [Function_3_Summary.md](./Function%20MD/Function_3_Summary.md) |
+| 4 | 4D | [0,1]⁴ | −0.0424 | UCB / max-variance probe | [Function_4_Summary.md](./Function%20MD/Function_4_Summary.md) |
+| 5 | 4D | [0,1]⁴ | 4577 | EI (near (1,1,1,1) corner) | [Function_5_Summary.md](./Function%20MD/Function_5_Summary.md) |
+| 6 | 5D | [0,1]⁵ | −0.6245 | EI (isotropic kernel) | [Function_6_Summary.md](./Function%20MD/Function_6_Summary.md) |
+| 7 | 6D | [0,1]⁶ | 1.5237 | EI (capped-ARD kernel) | [Function_7_Summary.md](./Function%20MD/Function_7_Summary.md) |
+| 8 | 8D | [0,1]⁸ | 9.901 | EI (widened-ARD kernel) | [Function_8_Summary.md](./Function%20MD/Function_8_Summary.md) |
 
 ---
 
