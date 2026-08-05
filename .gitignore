@@ -1,0 +1,20 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# Working directories not required
+Figures/
+Scratch/
+initial_data/
+Weekly_updates/
+Notes/
+
+# Conda/Anaconda
+anaconda_projects/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS junk
+.DS_Store
+Thumbs.db

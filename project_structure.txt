@@ -1,0 +1,266 @@
+Folder PATH listing for volume Windows
+Volume serial number is 0000006A 2A92:4020
+C:.
+¦   Capstone Project FAQs-1.pdf
+¦   Capstone Project.ipynb
+¦   Function1_progress_highwater.png
+¦   Function_1.ipynb
+¦   Function_2.ipynb
+¦   Function_3.ipynb
+¦   function_4.ipynb
+¦   Function_5.ipynb
+¦   Function_6.ipynb
+¦   Function_7.ipynb
+¦   Function_8.ipynb
+¦   Function_Temp.ipynb
+¦   project_structure.txt
+¦   README.md
+¦   scipy-clean-full.yml
+¦   Update_Data_Points.ipynb
+¦   
++---.ipynb_checkpoints
+¦       Capstone Project ENV-checkpoint.ipynb
+¦       Capstone Project-checkpoint.ipynb
+¦       Function_1-checkpoint.ipynb
+¦       Function_2-checkpoint.ipynb
+¦       Function_3-checkpoint.ipynb
+¦       function_4-checkpoint.ipynb
+¦       Function_5-checkpoint.ipynb
+¦       Function_6-checkpoint.ipynb
+¦       Function_7-checkpoint.ipynb
+¦       Function_8-checkpoint.ipynb
+¦       Function_Temp-checkpoint.ipynb
+¦       MatrixMathsTest-checkpoint.ipynb
+¦       README-checkpoint.md
+¦       Untitled-checkpoint.ipynb
+¦       Untitled1-checkpoint.ipynb
+¦       Untitled2-checkpoint.ipynb
+¦       Update_Data_Points-checkpoint.ipynb
+¦       
++---anaconda_projects
+¦   +---db
+¦           project_filebrowser.db
+¦           
++---Data
+¦   +---function_1
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_inputs_test.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       initial_outputs_test.npy
+¦   ¦       input.csv
+¦   ¦       merged_inputs.npy
+¦   ¦       merged_outputs.npy
+¦   ¦       output.csv
+¦   ¦       y_transformations.csv
+¦   ¦       y_transformations_review.csv
+¦   ¦       y_transformations_wk6.csv
+¦   ¦       
+¦   +---function_2
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_inputs_test.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       initial_outputs_test.npy
+¦   ¦       input.csv
+¦   ¦       merged_inputs.npy
+¦   ¦       merged_outputs.npy
+¦   ¦       output.csv
+¦   ¦       y_transformations.csv
+¦   ¦       
+¦   +---function_3
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_inputs_test.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       initial_outputs_test.npy
+¦   ¦       input.csv
+¦   ¦       merged_inputs.npy
+¦   ¦       merged_outputs.npy
+¦   ¦       output.csv
+¦   ¦       y_transformations.csv
+¦   ¦       
+¦   +---function_4
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_inputs_test.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       initial_outputs_test.npy
+¦   ¦       input.csv
+¦   ¦       merged_inputs.npy
+¦   ¦       merged_outputs.npy
+¦   ¦       output.csv
+¦   ¦       y_transformations.csv
+¦   ¦       
+¦   +---function_5
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_inputs_test.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       initial_outputs_test.npy
+¦   ¦       input.csv
+¦   ¦       merged_inputs.npy
+¦   ¦       merged_outputs.npy
+¦   ¦       output.csv
+¦   ¦       y_transformations.csv
+¦   ¦       
+¦   +---function_6
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_inputs_test.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       initial_outputs_test.npy
+¦   ¦       input.csv
+¦   ¦       merged_inputs.npy
+¦   ¦       merged_outputs.npy
+¦   ¦       output.csv
+¦   ¦       y_transformations.csv
+¦   ¦       
+¦   +---function_7
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_inputs_test.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       initial_outputs_test.npy
+¦   ¦       input.csv
+¦   ¦       merged_inputs.npy
+¦   ¦       merged_outputs.npy
+¦   ¦       output.csv
+¦   ¦       y_transformations.csv
+¦   ¦       
+¦   +---function_8
+¦           initial_inputs.npy
+¦           initial_inputs_test.npy
+¦           initial_outputs.npy
+¦           initial_outputs_test.npy
+¦           input.csv
+¦           merged_inputs.npy
+¦           merged_outputs.npy
+¦           output.csv
+¦           y_transformations.csv
+¦           
++---Docs
+¦   ¦   AI Ideas.docx
+¦   ¦   BBO_Capstone_Datasheet.docx
+¦   ¦   BBO_Capstone_Datasheet_and_Model_Card.docx
+¦   ¦   BBO_Capstone_Model_Card.docx
+¦   ¦   Black Box Capstone.docx
+¦   ¦   Readme.docx
+¦   ¦   README.md
+¦   ¦   Reflections Postings.docx
+¦   ¦   Reflections.docx
+¦   ¦   Round10_Reflection.docx
+¦   ¦   
+¦   +---.ipynb_checkpoints
+¦           README-checkpoint.md
+¦           
++---Figures
+¦       function inputs.png
+¦       Function1_exploration_signal.png
+¦       Function1_sigma_map.png
+¦       Function1_straddle_map.png
+¦       Function2_exploration_signal.png
+¦       Function2_sigma_map.png
+¦       Function4_projection_matrix.png
+¦       Function5_projection_matrix.png
+¦       Function6_projection_matrix.png
+¦       Function7_projection_matrix.png
+¦       Function8_projection_matrix.png
+¦       Iter 2 F1 Graph.png
+¦       Iter 2 F2 Graph.png
+¦       Iter2 Table.png
+¦       Results Wk2.png
+¦       Wk4 results.png
+¦       
++---Function MD
+¦       Function_1_Summary.md
+¦       Function_2_Summary.md
+¦       Function_3_Summary.md
+¦       Function_4_Summary.md
+¦       Function_5_Summary.md
+¦       Function_6_Summary.md
+¦       Function_7_Summary.md
+¦       Function_8_Summary.md
+¦       
++---initial_data
+¦   +---function_1
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       output.csv
+¦   ¦       
+¦   +---function_2
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       output.csv
+¦   ¦       y_transformations.csv
+¦   ¦       
+¦   +---function_3
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       output.csv
+¦   ¦       
+¦   +---function_4
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       output.csv
+¦   ¦       
+¦   +---function_5
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       output.csv
+¦   ¦       
+¦   +---function_6
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       output.csv
+¦   ¦       y_transformations.csv
+¦   ¦       
+¦   +---function_7
+¦   ¦       initial_inputs.npy
+¦   ¦       initial_outputs.npy
+¦   ¦       output.csv
+¦   ¦       y_transformations.csv
+¦   ¦       
+¦   +---function_8
+¦           initial_inputs.npy
+¦           initial_outputs.npy
+¦           output.csv
+¦           y_transformations.csv
+¦           
++---Results
+¦       Data Points.xlsx
+¦       
++---Scratch
+¦       Capstone Project ENV.ipynb
+¦       MatrixMathsTest.ipynb
+¦       test.py
+¦       
++---Utils
+¦   ¦   imse_acquisition.py
+¦   ¦   plot_input_pairs.py
+¦   ¦   plot_progress.py
+¦   ¦   
+¦   +---.ipynb_checkpoints
+¦   ¦       imse_acquisition-checkpoint.py
+¦   ¦       
+¦   +---__pycache__
+¦           imse_acquisition.cpython-310.pyc
+¦           plot_input_pairs.cpython-310.pyc
+¦           plot_progress.cpython-310.pyc
+¦           
++---Weekly_updates
+¦       w1_inputs.txt
+¦       w1_outputs.txt
+¦       w2_inputs.txt
+¦       w2_outputs.txt
+¦       w3_inputs.txt
+¦       w3_outputs.txt
+¦       w4_inputs.txt
+¦       w4_outputs.txt
+¦       w5_inputs.txt
+¦       w5_outputs.txt
+¦       w6_inputs.txt
+¦       w6_outputs.txt
+¦       w7_inputs.txt
+¦       w7_outputs.txt
+¦       w8_inputs.txt
+¦       w8_outputs.txt
+¦       w9_inputs.txt
+¦       w9_outputs.txt
+¦       
++---__pycache__
+        imse_acquisition.cpython-310.pyc
+        

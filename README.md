@@ -19,14 +19,12 @@ This problem is representative of real-world applications in machine learning an
 | Datasheet | Documents the initial and weekly datasets: provenance, collection process, per-function structure, known limitations (noise, non-stationarity), and intended use | [BBO_Capstone_Datasheet.md](./BBO_Capstone_Datasheet.md) ([.docx](./BBO_Capstone_Datasheet.docx)) |
 | Model Card | Documents the GP surrogate models: architecture, kernel choices per function, training/fitting process, intended use, and evaluation limitations | [BBO_Capstone_Model_Card.md](./BBO_Capstone_Model_Card.md) ([.docx](./BBO_Capstone_Model_Card.docx)) |
 | Readme (Word) | Word-format mirror of this file | [Readme.docx](./Docs/Readme.docx) |
-| Black Box Capstone Report | Main write-up, HEBO/TuRBO two-pillar structure | [Black Box Capstone.docx](./Docs/Black%20Box%20Capstone.docx) |
-| Reflections | Reflective/interview-style write-up | [Reflections.docx](./Docs/Reflections.docx) |
 
 ---
 
 ## Repository Structure
 
-> **GitHub status:** as of writing, only `README.md`, `BBO_Capstone_Datasheet.docx`/`.md`, and `BBO_Capstone_Model_Card.docx`/`.md` have been pushed to GitHub (hence the root-level links above). The structure below reflects the full local project directory and will be pushed in a later commit. Auto-generated housekeeping folders (`.ipynb_checkpoints/`, `anaconda_projects/`, `__pycache__/`) are omitted below for clarity.
+> **GitHub status:** the full project structure below (notebooks, data, utilities, figures, and `Docs/`) is pushed to GitHub. A `Notes/` folder also exists locally for private working documents (draft write-ups, reflections, AI-assistance notes) and is excluded from GitHub via `.gitignore` — it is not shown below. Auto-generated housekeeping folders (`.ipynb_checkpoints/`, `anaconda_projects/`, `__pycache__/`) are also omitted for clarity.
 
 ```
 ├── README.md
@@ -54,17 +52,8 @@ This problem is representative of real-world applications in machine learning an
 │   ├── Function_2_Summary.md
 │   └── ... (through Function_8_Summary.md)
 │
-├── Docs/                         # Project documentation and reflections
-│   ├── BBO_Capstone_Datasheet.docx
-│   ├── BBO_Capstone_Model_Card.docx
-│   ├── BBO_Capstone_Datasheet_and_Model_Card.docx   # combined version
-│   ├── Readme.docx
-│   ├── README.md
-│   ├── Black Box Capstone.docx
-│   ├── Reflections.docx
-│   ├── Reflections Postings.docx
-│   ├── Round10_Reflection.docx
-│   └── AI Ideas.docx
+├── Docs/                         # Public project documentation
+│   └── Readme.docx                # Word-format mirror of this file
 │
 ├── Data/                         # Per-function evaluated points — full merged dataset + transform logs
 │   ├── function_1/
