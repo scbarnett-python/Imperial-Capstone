@@ -1,5 +1,7 @@
 # Black-Box Optimisation Capstone Project
 
+[![GitHub Repo](https://img.shields.io/badge/GitHub-scbarnett--python%2FImperial--Capstone-181717?logo=github&logoColor=white)](https://github.com/scbarnett-python/Imperial-Capstone)
+
 ## Project Overview
 
 This project applies Bayesian Optimisation (BO) to maximise the outputs of eight unknown black-box functions using a limited evaluation budget. The underlying mathematical forms of the functions are completely hidden — optimisation decisions must be made solely from observed input-output data and a restricted number of weekly queries.
@@ -14,8 +16,8 @@ This problem is representative of real-world applications in machine learning an
 
 | Document | Description | Link |
 |----------|-------------|------|
-| Datasheet | Documents the initial and weekly datasets: provenance, collection process, per-function structure, known limitations (noise, non-stationarity), and intended use | [BBO_Capstone_Datasheet.docx](./BBO_Capstone_Datasheet.docx) |
-| Model Card | Documents the GP surrogate models: architecture, kernel choices per function, training/fitting process, intended use, and evaluation limitations | [BBO_Capstone_Model_Card.docx](./BBO_Capstone_Model_Card.docx) |
+| Datasheet | Documents the initial and weekly datasets: provenance, collection process, per-function structure, known limitations (noise, non-stationarity), and intended use | [BBO_Capstone_Datasheet.md](./BBO_Capstone_Datasheet.md) ([.docx](./BBO_Capstone_Datasheet.docx)) |
+| Model Card | Documents the GP surrogate models: architecture, kernel choices per function, training/fitting process, intended use, and evaluation limitations | [BBO_Capstone_Model_Card.md](./BBO_Capstone_Model_Card.md) ([.docx](./BBO_Capstone_Model_Card.docx)) |
 | Readme (Word) | Word-format mirror of this file | [Readme.docx](./Docs/Readme.docx) |
 | Black Box Capstone Report | Main write-up, HEBO/TuRBO two-pillar structure | [Black Box Capstone.docx](./Docs/Black%20Box%20Capstone.docx) |
 | Reflections | Reflective/interview-style write-up | [Reflections.docx](./Docs/Reflections.docx) |
@@ -24,12 +26,14 @@ This problem is representative of real-world applications in machine learning an
 
 ## Repository Structure
 
-> **GitHub status:** as of writing, only `README.md`, `BBO_Capstone_Datasheet.docx`, and `BBO_Capstone_Model_Card.docx` have been pushed to GitHub (hence the root-level links above). The structure below reflects the full local project directory and will be pushed in a later commit. Auto-generated housekeeping folders (`.ipynb_checkpoints/`, `anaconda_projects/`, `__pycache__/`) are omitted below for clarity.
+> **GitHub status:** as of writing, only `README.md`, `BBO_Capstone_Datasheet.docx`/`.md`, and `BBO_Capstone_Model_Card.docx`/`.md` have been pushed to GitHub (hence the root-level links above). The structure below reflects the full local project directory and will be pushed in a later commit. Auto-generated housekeeping folders (`.ipynb_checkpoints/`, `anaconda_projects/`, `__pycache__/`) are omitted below for clarity.
 
 ```
 ├── README.md
 ├── BBO_Capstone_Datasheet.docx
+├── BBO_Capstone_Datasheet.md
 ├── BBO_Capstone_Model_Card.docx
+├── BBO_Capstone_Model_Card.md
 ├── Capstone Project.ipynb           # Main notebook
 ├── Function_1.ipynb                 # Per-function GP modelling and acquisition notebooks
 ├── Function_2.ipynb
